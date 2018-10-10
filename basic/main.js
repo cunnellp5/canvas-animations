@@ -13,9 +13,10 @@ function draw() {
   ctx.beginPath();
   ctx.arc(centerX, centerY, radius + (100*i), 0, (i * Math.PI), false);
   ctx.arc(centerX, centerY, radius - (100*i), 0, (i + i * Math.PI), false);
-
+console.log(Math.floor(10*i));
   ctx.lineWidth = .9;
-  ctx.strokeStyle = 'red';
+  ctx.strokeStyle = `rgb(76, 1${i * 70 + 30}${Math.floor(10*i)}), 244)`;
+// rgb(244, 1${Math.floor(10*i)}0, 6${Math.floor(10*i)})
   ctx.stroke();
 
   i = (i + .001);
@@ -33,7 +34,7 @@ function draw2() {
   ctx.arc(centerX, centerY, radius - (100*i), 0, (i * Math.PI), false);
 
   ctx.lineWidth = 1;
-  ctx.strokeStyle = 'blue';
+  ctx.strokeStyle = `rgb(66, 1${i * 70 + 9}, 244)`;
   ctx.stroke();
   i = (i + .01);
 }
@@ -51,4 +52,6 @@ function draw2() {
     console.log('hi');
     clearInterval(timerId);
   }
+
+
   draw()
